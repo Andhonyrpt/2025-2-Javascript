@@ -20,7 +20,7 @@ async function main() {
   switch (operacion.toLowerCase()){
     case "suma":
       resultado = num1 + num2;
-      console.log(`El resultado de ${num1} + ${num|} es: ${resultado}`);
+      console.log(`El resultado de ${num1} + ${num2} es: ${resultado}`);
       break;
     case "resta":
       resultado = num1 - num2;
