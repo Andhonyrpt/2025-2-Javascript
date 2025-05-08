@@ -14,9 +14,8 @@ async function main() {
 
   if (temperatura > 0 && temperatura <= 10) {
     console.log("Hace frío");
-  } 
-  else if(temperatura > 10 && temperatura <=20){
-    console.log("El clima esta templado");
+  } else if(temperatura > 10 && temperatura <=20){
+      console.log("El clima esta templado");
   }
   else if(temperatura > 20 && temperatura <= 30){
     console.log("Hace bastante calor");
