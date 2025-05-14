@@ -10,6 +10,13 @@ async function main() {
         }
     }
 
+    let j = 1;
+    while(j <= 100){
+        if(j % 2 === 0){
+            console.log(j);
+        }
+        j++;
+    }
 }
 
 main();
