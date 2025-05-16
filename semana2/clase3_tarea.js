@@ -33,7 +33,7 @@ async function main() {
                     resultado++
                 }
             }
-            console.log("El total es:",resultado);
+            console.log("El total de mayores de 18 es:",resultado);
             resultado = 0;
         } else if( opcion === '3'){
             //Salir
