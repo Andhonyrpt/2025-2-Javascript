@@ -12,3 +12,57 @@
 //Promedio general
 //
 //La calificación más alta y la más baja
+
+const { ask } = require('../helpers/input');
+
+    function obtenerPromedio(numeros){
+
+        let total = 0;
+        for (let i = 0; i < numeros.length; i++) {
+            total = total + numeros[i];
+        }
+        const promedio = total / numeros.length;
+        return promedio;
+    }
+
+    function obtenerMayor(numeros){
+        let mayor = numeros[0];
+        for(let i = 0; i < numeros.length; i++){
+            if(numeros[i] > mayor){
+                mayor = numeros[i];
+            }
+        }
+        return mayor;
+    }
+
+    function obtenerMenor(numeros){
+        let menor = numeros[0];
+        for(let i = 0; i < numeros.length; i++){
+            if(numeros[i] < menor){
+                menor = numeros[i];
+            }
+        }
+        return menor;
+    }
+
+    function analizarCalificaciones(numeros){
+        
+        const promedio = obtenerPromedio(numeros);
+        const mayor = obtenerMayor(numeros);
+        const menor = obtenerMenor(numeros);
+
+        return{ promedio, mayor, menor };
+    }
+
+async function main() {
+
+    let calificaciones = Array.from({ length: 101 }, (_, i) => i);
+
+    const resultado = analizarCalificaciones(calificaciones);
+    console.log(`El promedio es: ${resultado.promedio}`);
+    console.log(`El número mayor es: ${resultado.mayor}`);
+    console.log(`El número menor es: ${resultado.menor}`);
+
+}
+
+main();
