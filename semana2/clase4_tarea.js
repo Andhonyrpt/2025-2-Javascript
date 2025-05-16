@@ -15,13 +15,34 @@
 
 const { ask } = require('../helpers/input');
 
+    function obtenerAprobados(numeros){
+
+        let aprobados = 0;
+        for(let i=0; i<numeros.length; i++){
+            if(numeros[i] >= 70){
+                aprobados++
+            }
+        }
+        return aprobados;
+    }
+    
+    function obtenerReprobados(numeros){
+        let reprobados = 0;
+        for(let i=0; i<numeros.length; i++){
+            if(numeros[i]<70){
+                reprobados++
+            }
+        }
+        return reprobados;    
+    }
+
     function obtenerPromedio(numeros){
 
-        let total = 0;
+        let total3 = 0;
         for (let i = 0; i < numeros.length; i++) {
-            total = total + numeros[i];
+            total3 = total3 + numeros[i];
         }
-        const promedio = total / numeros.length;
+        const promedio = total3 / numeros.length;
         return promedio;
     }
 
@@ -47,21 +68,26 @@ const { ask } = require('../helpers/input');
 
     function analizarCalificaciones(numeros){
         
+        const aprobados = obtenerAprobados(numeros);
+        const reprobados = obtenerReprobados(numeros);
         const promedio = obtenerPromedio(numeros);
         const mayor = obtenerMayor(numeros);
         const menor = obtenerMenor(numeros);
 
-        return{ promedio, mayor, menor };
+        return{ aprobados, reprobados, promedio, mayor, menor };
     }
 
 async function main() {
 
     let calificaciones = Array.from({ length: 101 }, (_, i) => i);
 
+
     const resultado = analizarCalificaciones(calificaciones);
+    console.log(`El total de aprobados es: ${resultado.aprobados}`);
+    console.log(`El total de reprobados es: ${resultado.reprobados}`);
     console.log(`El promedio es: ${resultado.promedio}`);
-    console.log(`El número mayor es: ${resultado.mayor}`);
-    console.log(`El número menor es: ${resultado.menor}`);
+    console.log(`La calificación mas alta es: ${resultado.mayor}`);
+    console.log(`La calificación mas baja es: ${resultado.menor}`);
 
 }
 
