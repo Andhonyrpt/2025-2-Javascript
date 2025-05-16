@@ -80,8 +80,7 @@ const { ask } = require('../helpers/input');
 async function main() {
 
     let calificaciones = Array.from({ length: 101 }, (_, i) => i);
-
-
+    
     const resultado = analizarCalificaciones(calificaciones);
     console.log(`El total de aprobados es: ${resultado.aprobados}`);
     console.log(`El total de reprobados es: ${resultado.reprobados}`);
